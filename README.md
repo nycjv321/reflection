@@ -38,7 +38,6 @@ Method parameters are referred to as "criterion". If this code is compiled using
 Alternatively, you may "search" for arguments. For example:
 
     Receiver.of(TestClass.class)
-        .of(TestClass.class)
         .on("stuff", String.class)
         .argumentAnnotation(WebParam.class, webParam -> !webParam.header());
         
