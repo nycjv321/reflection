@@ -12,14 +12,15 @@ import java.util.function.Predicate;
 /**
  * Created by Javier L. Velasquez <nycjv321@gmail.com> on 12/9/16.
  */
-public final class Message {
+public final class Message implements Describable {
     private final Method method;
 
     Message(Method method) {
         this.method = method;
     }
 
-    public <T extends Annotation> T annotation(Class<T> annotation) {
+    @Override
+    public <T extends Annotation> T get(Class<T> annotation) {
         return this.method.getAnnotation(annotation);
     }
 

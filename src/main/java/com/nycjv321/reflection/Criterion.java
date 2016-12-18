@@ -9,13 +9,14 @@ import java.lang.reflect.Parameter;
 /**
  * Created by Javier L. Velasquez <nycjv321@gmail.com> on 12/9/16.
  */
-public final class Criterion {
+public final class Criterion implements Describable {
     private final Parameter parameter;
 
     Criterion(Parameter parameter) {
         this.parameter = parameter;
     }
 
+    @Override
     @Nullable
     public <T extends Annotation> T get(Class<T> annotation) {
         return this.parameter.getAnnotation(annotation);

@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * Created by Javier L. Velasquez <nycjv321@gmail.com> on 12/9/16.
  */
-public final class Receiver<T> {
+public final class Receiver<T> implements Describable {
 
     private final Class<T> clazz;
 
@@ -34,6 +34,7 @@ public final class Receiver<T> {
 
     }
 
+    @Override
     public <R extends Annotation> R get(Class<R> annotation) {
         return this.clazz.getAnnotation(annotation);
     }

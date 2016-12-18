@@ -12,8 +12,8 @@ import static org.testng.Assert.*;
  */
 public class MessageTest {
 
-    private Message message;
     private final Receiver<TestClass> receiver = Receiver.of(TestClass.class);
+    private Message message;
 
     @Test(dependsOnGroups = "receiver", groups = "messages")
     public void on() {
@@ -36,7 +36,7 @@ public class MessageTest {
     public void annotation() {
         assertFalse(
             message
-                .annotation(Test.class)
+                    .get(Test.class)
                 .enabled()
         );
     }
